@@ -1,0 +1,80 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.contact-section {
+  padding: 50px 300px 0px 90px;
+  background-color: #223c6a;
+  color: #fff;
+
+  &-main {
+    @include flex-box-item;
+    gap: 150px;
+
+    &-img-div {
+      img {
+        height: 300px;
+        margin-bottom: -10px;
+      }
+    }
+
+    &-text {
+      @include vertical-list-no-align;
+      gap: 15px;
+
+      input[type="email"] {
+        @include input-style;
+        flex-basis: 75%;
+      }
+
+      button {
+        @include btn-style;
+        flex-basis: 25%;
+        background-color: $bg-color3;
+      }
+
+      h3 {
+        @include header-style;
+      }
+
+      p {
+        @include para-style;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.contact-section-text-form {
+  display: flex;
+  gap: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-section {
+    padding: 50px 30px;
+
+    &-main {
+      display: block;
+      h3 {
+        @include mobile-header;
+        color: #fff;
+      }
+      p {
+        @include mobile-para;
+        color: #fff;
+      }
+
+      &-text {
+        margin-top: 40px;
+      }
+    }
+  }
+  .contact-section-text-form {
+    flex-direction: column;
+    gap: 5px;
+
+    input[type="email"] {
+      padding: 12px 20px;
+    }
+  }
+}

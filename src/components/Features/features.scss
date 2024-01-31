@@ -1,0 +1,68 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.features {
+  background-image: url("../../images/features bg.svg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 130px;
+  color: $header-text-color;
+  gap: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &-div {
+    display: flex;
+    gap: 20px;
+    img {
+      width: 700px;
+      height: 500px;
+    }
+    ul {
+      padding: 0px;
+      margin: 50px 70px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+    }
+    &-list-items {
+      background: url("../../images/tick 14.svg") no-repeat 7px 7px;
+      list-style: none;
+      margin: 0;
+      padding: 0px 0px 25px 100px;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .features {
+    padding: 50px 15px;
+
+    h1 {
+      @include mobile-header;
+    }
+    p {
+      @include mobile-para;
+    }
+  }
+  .features-div {
+    display: block;
+
+    img {
+      width: 100%;
+      height: 411px;
+      object-fit: cover;
+    }
+
+    ul {
+      margin: 10px 0;
+    }
+
+    &-list-items {
+      padding: 0px 0px 15px 50px;
+    }
+  }
+}
